@@ -13,8 +13,8 @@ class Dice:
 class StudentData:
     # data classes dont need any __init__ funtions. things are auto gernerated. 
     name: str
-    school_id:str
-    gpa:float
+    school_id: str
+    gpa: float
 
 def __str__(self) -> str:  # creating a customised string output.
     string_output = f"""Student Name: {self.name}
