@@ -11,11 +11,12 @@ class Dice:
 
 @dataclass
 class StudentData:
+    # data classes dont need any __init__ funtions. things are auto gernerated. 
     name: str
     school_id:str
     gpa:float
 
-def __str__(self) -> str:
+def __str__(self) -> str:  # creating a customised string output.
     string_output = f"""Student Name: {self.name}
         ID: {self.school_id}
         Grade Point Average: {self.gpa}"""
@@ -40,7 +41,10 @@ class Author:
         self.published_books = []
 
     def publish(self,title_name):
-        self.published_books.append(title_name.title())
+        if title_name in self.published_books:
+            raise ValueError(f"{title_name} has already been published. ")
+        else:
+            self.published_books.append(title_name.title())
     
     def __str__(self) -> str:
         author_string =f"{self.name.title()} has the following books published: \n"
